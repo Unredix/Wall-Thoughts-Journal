@@ -2,6 +2,10 @@ body {
   background-color: rgb(37, 37, 37);
   margin: 0;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 .header-container {
   display: flex;
   align-items: center;
@@ -13,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 10px;
 }
 .logo {
@@ -102,6 +106,15 @@ body {
   margin-left: 10px;
   gap: 5px;
   color: white;
+}
+span.new-post {
+  font-size: 12px;
+  color: rgb(131, 247, 140);
+}
+
+span.followers {
+  font-size: 12px;
+  color: rgb(198, 253, 255);
 }
 
 .wall-posts {
