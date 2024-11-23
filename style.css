@@ -1,0 +1,234 @@
+body {
+  background-color: rgb(37, 37, 37);
+  margin: 0;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  background-color: rgb(112, 112, 112);
+  width: 100%;
+  height: 50px;
+}
+.header-items {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  gap: 10px;
+}
+.logo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  max-width: 500px;
+}
+.search input {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  flex: 1;
+}
+.search button {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  margin-left: 5px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.profile img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 15px;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+.user-follow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 15%;
+  min-width: 180px;
+  background-color: rgb(59, 59, 59);
+}
+.user-follow h2 {
+  margin-left: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.top-followed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.top-followed img {
+  margin-left: 10px;
+  width: 50px;
+}
+.top-followed-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+  gap: 5px;
+  color: white;
+}
+
+.wall-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 60%;
+  background-color: rgb(59, 59, 59);
+  margin-left: 50px;
+}
+
+.post-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(43, 43, 43);
+  width: 100%;
+  height: 150px;
+  padding-bottom: 10px;
+}
+
+.post-create-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.post-create-profile img {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.post-create-profile p {
+  margin-left: 10px;
+}
+
+.post-create-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  gap: 5px;
+  color: white;
+}
+.post-create-input input {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+.switch-feed {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.switch-feed button {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  margin-left: 5px;
+}
+.switch-feed button:hover {
+  background-color: rgb(143, 143, 143);
+  cursor: pointer;
+}
+button.feed-active {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.wall-post {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(43, 43, 43);
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.post-user-info img {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.post-user-info span {
+  margin-left: 10px;
+}
+
+button.follow-button {
+  margin-left: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  margin-left: 10px;
+}
+button.follow-button:hover {
+  background-color: rgb(143, 143, 143);
+  cursor: pointer;
+}
+.post-content {
+  margin-left: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
