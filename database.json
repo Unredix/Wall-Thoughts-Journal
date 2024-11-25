@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "author": "Unredix",
+      "date": "2024-11-25T16:41:00Z",
+      "like": "0",
+      "reactions": {
+        "thumbs-up": 1,
+        "laugh": 2,
+        "heart": 3,
+        "angry": 0
+      },
+      "content": "Hello, world!"
+    },
+    {
+      "id": 1,
+      "author": "John Doe",
+      "date": "2024-11-25T17:30:00Z",
+      "like": "5",
+      "reactions": {
+        "thumbs-up": 2,
+        "laugh": 0,
+        "heart": 1,
+        "angry": 0
+      },
+      "content": "This is my first post!"
+    }
+  ]
+}
