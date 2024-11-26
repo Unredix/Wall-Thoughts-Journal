@@ -95,6 +95,10 @@ a {
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.top-followed:hover {
+  background-color: rgb(43, 43, 43);
+  cursor: pointer;
+}
 .top-followed img {
   margin-left: 10px;
   width: 50px;
@@ -249,6 +253,9 @@ button.feed-active {
 
 .post-user-info span {
   margin-left: 10px;
+}
+.post-user-info span:hover {
+  cursor: pointer;
 }
 
 button.follow-button {
