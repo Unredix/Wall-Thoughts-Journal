@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "https://unredix.github.io",
+    origin: "https://unredix.github.io/Wall-Thoughts-Journal/",
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
