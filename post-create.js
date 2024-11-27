@@ -6,11 +6,13 @@ const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
 
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST"],
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://unredix.github.io",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 // Path to your JSON file
 const jsonFilePath = `${__dirname}/database.json`;
