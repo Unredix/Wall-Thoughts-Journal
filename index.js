@@ -42,8 +42,9 @@ document.getElementById("background4").addEventListener("click", () => {
   document.querySelector(".post-create").style.backgroundImage = "none";
   post_background = "none";
 });
-async function fetchPosts() {
-  const response = await fetch("/posts");
+async function fetchPost(postId) {
+  const BASE_URL = "https://wall-thoughts-journal-production.up.railway.app";
+  const response = await fetch(`${BASE_URL}/posts/${postId}`);
   const posts = await response.json();
 
   const postsContainer = document.getElementById("posts");
@@ -94,7 +95,7 @@ document
     const author = document.getElementById("author").value;
     const content = document.getElementById("content").value;
 
-    const response = await fetch("/post-create", {
+    const response = await fetch(`${BASE_URL}/post-create`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ author, content }),
@@ -102,7 +103,7 @@ document
 
     if (response.ok) {
       alert("Post created successfully!");
-      fetchPosts(); // Reload posts
+      fetchPost(1); // Reload posts
     } else {
       const error = await response.json();
       alert(`Error: ${error.error}`);
@@ -111,13 +112,16 @@ document
 
 // Send a reaction to the server
 async function sendReaction(postId, reactionType) {
-  const response = await fetch(`/posts/${postId}/reactions/${reactionType}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `${BASE_URL}/posts/${postId}/reactions/${reactionType}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (response.ok) {
-    fetchPosts(); // Reload posts to update counts
+    fetchPost(1); // Reload posts to update counts
   } else {
     const error = await response.json();
     alert(`Error: ${error.error}`);
@@ -125,4 +129,4 @@ async function sendReaction(postId, reactionType) {
 }
 
 // Fetch posts on page load
-fetchPosts();
+fetchPost(1);

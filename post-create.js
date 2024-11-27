@@ -5,20 +5,34 @@ const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST"],
+};
+app.use(cors(corsOptions));
 
 // Path to your JSON file
 const jsonFilePath = `${__dirname}/database.json`;
 
 // Load JSON file
 function loadJSONFile() {
-  const data = fs.readFileSync(jsonFilePath, "utf8");
-  return JSON.parse(data);
+  try {
+    const data = fs.readFileSync(jsonFilePath, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("Error loading JSON file:", error.message);
+    return { posts: [] }; // Default structure
+  }
 }
 
 // Save JSON file
 function saveJSONFile(data) {
-  fs.writeFileSync(jsonFilePath, JSON.stringify(data, null, 2), "utf8");
+  try {
+    fs.writeFileSync(jsonFilePath, JSON.stringify(data, null, 2), "utf8");
+  } catch (error) {
+    console.error("Error saving JSON file:", error.message);
+  }
 }
 
 // Endpoint to handle creating a new post
@@ -89,4 +103,6 @@ app.post("/posts/:postId/reactions/:reactionType", (req, res) => {
   res.json(post);
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log("Server running on port 3000"));
