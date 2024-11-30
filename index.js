@@ -130,3 +130,7 @@ async function sendReaction(postId, reactionType) {
 
 // Fetch posts on page load
 fetchPost(1);
+
+document.getElementById("top-followed-1").addEventListener("click", () => {
+  window.location.href = "profile.html";
+});
