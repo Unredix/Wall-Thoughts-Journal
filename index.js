@@ -134,3 +134,24 @@ fetchPost(1);
 document.getElementById("top-followed-1").addEventListener("click", () => {
   window.location.href = "profile.html";
 });
+
+document.getElementById("most-popular-button").addEventListener("click", () => {
+  document.getElementById("most-popular-button").classList.add("feed-active");
+  document.getElementById("latest-button").classList.remove("feed-active");
+  document.getElementById("followed-button").classList.remove("feed-active");
+});
+
+document.getElementById("latest-button").addEventListener("click", () => {
+  document.getElementById("latest-button").classList.add("feed-active");
+  document
+    .getElementById("most-popular-button")
+    .classList.remove("feed-active");
+  document.getElementById("followed-button").classList.remove("feed-active");
+});
+document.getElementById("followed-button").addEventListener("click", () => {
+  document.getElementById("followed-button").classList.add("feed-active");
+  document
+    .getElementById("most-popular-button")
+    .classList.remove("feed-active");
+  document.getElementById("latest-button").classList.remove("feed-active");
+});
